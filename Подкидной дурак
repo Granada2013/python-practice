@@ -1,3 +1,5 @@
+#Самодельная, немного разукрашенная игра в подкидного дурака с компьютером 
+
 from random import choice
 from colorama import init
 init()
@@ -289,6 +291,7 @@ while len(player) and len(computer) > 0:
     elif winner == 'computer':
         computer_turn()
     print()
+    
 # объявление  победителя
 else:
     print('Игра окончена')
@@ -300,7 +303,6 @@ else:
         print(Style.RESET_ALL + 'Оставшиеся карты: ', *player)
     else:
         print(Style.BRIGHT, Back.BLUE, Fore.WHITE + 'Ничья!')
-input()
 
 
 
