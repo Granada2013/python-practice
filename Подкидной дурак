@@ -35,6 +35,7 @@ def computer_answer(p):
         if card[-1] == p[-1] and card_rank(card) > card_rank(p):
             cmp_answ.append(card)
     if len(cmp_answ) > 0:
+        cmp_answ.sort(key=lambda x: card_rank(x))
         c = cmp_answ[0]
         print('Соперник отбился: ', c)
         computer.remove(c)
