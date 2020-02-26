@@ -304,7 +304,6 @@ else:
         print(Style.RESET_ALL + 'Оставшиеся карты: ', *player)
     else:
         print(Style.BRIGHT, Back.BLUE, Fore.WHITE + 'Ничья!')
-input()
 
 
 
