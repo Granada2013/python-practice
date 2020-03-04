@@ -1,1 +1,1 @@
-Это мое корявое решение задач на Python и первые самописные программульки.
+Hi there! I'm Anya and this are my first python excercises and some basic programmes.
