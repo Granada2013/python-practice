@@ -3,6 +3,10 @@ Your task in order to complete this Kata is to write a function which formats a 
 given as a number of seconds, in a human-friendly way.
 The function must accept a non-negative integer. If it is zero, it just returns "now".
 Otherwise, the duration is expressed as a combination of years, days, hours, minutes and seconds.
+The components are separated by a comma and a space (", ").
+Except the last component, which is separated by " and ", just like it would be written in English.
+
+example: time_converter(3662)  # returns "1 hour, 1 minute and 2 seconds"
 """
 def time_converter(sec):
     if not sec:
