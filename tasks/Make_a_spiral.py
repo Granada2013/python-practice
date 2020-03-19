@@ -10,7 +10,6 @@ For example, spiral with size 5 should look like this:
 00000
 Return value should contain array of arrays, of 0 and 1, for example for given size 5 result should be:
 [[1,1,1,1,1],[0,0,0,0,1],[1,1,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
-Because of the edge-cases for tiny spirals, the size will be at least 5.
 General rule-of-a-thumb is, that the snake made with '1' cannot touch to itself.
 """
 
@@ -40,6 +39,5 @@ def spiral(n):
             mode = 'Up'; j_temp = j
     if n % 2 == 0: matrix[i_temp][j_temp] = 0
     return matrix
-
 
 
