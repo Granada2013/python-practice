@@ -3,7 +3,6 @@ Your task, is to create a NxN spiral with a given size.
 
 For example, spiral with size 5 should look like this:
 
-<<<<<<< HEAD
 11111
 ....1
 111.1
@@ -32,7 +31,8 @@ def spiral(n):
             for i in range(i_temp, i_temp + (n - cnt)):
                 matrix[i][j_temp] = 1
             mode = 'Left'; i_temp = i
-        elif mode == 'Left':            for j in range(j_temp, j_temp - (n - cnt), -1):
+        elif mode == 'Left':
+            for j in range(j_temp, j_temp - (n - cnt), -1):
                 matrix[i_temp][j] = 1
             cnt += 2
             mode = 'Up'; j_temp = j
