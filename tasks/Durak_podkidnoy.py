@@ -9,7 +9,6 @@ from colorama import Fore, Back, Style
 
 #функция добора карт из колоды
 def dobor_kart(to):
-    global deck
     for _ in range(6 - len(to)):
         if len(deck) > 0:
             n = choice(deck)
@@ -19,15 +18,11 @@ def dobor_kart(to):
 
 #функция проверки ранга карты
 def card_rank(card):
-    global vals
     return vals.index(card[:-1])
 
 #функция ответа компьютера на ход игрока p
 def computer_answer(p):
-    global computer
-    global trump
-    global turn_set
-    global c
+    global turn_set, c
     cmp_no_trump = [card for card in computer if card[-1] != trump]
     cmp_trump = [card for card in computer if card[-1] == trump]
     cmp_no_trump.sort(key=lambda x: card_rank(x))
@@ -55,17 +50,11 @@ def computer_answer(p):
         else:
             print('Вы пошли с козырей! Сопернику нечем бить. Он взял карту')
             c = 'taken'
-    return computer, c, turn_set
+    return c, turn_set
 
 #фнкция раунда, начинающегося с хода игрока
 def player_turn():
-    global player
-    global computer
-    global deck
-    global trump
-    global turn_set
-    global c
-    global winner
+    global turn_set, c, winner
     player.sort(key=lambda x: card_rank(x))
     print(Back.GREEN, Fore.BLACK, Style.BRIGHT + 'Ваш ход:', Style.RESET_ALL)
     print('Ваши карты: ', Fore.GREEN, *player, Style.RESET_ALL)
@@ -135,17 +124,11 @@ def player_turn():
         winner = 'computer'
     if len(deck) > 0 and len(player) < 6: dobor_kart(player)
     if len(deck) > 0 and len(computer) < 6: dobor_kart(computer)
-    return player, computer, deck, winner
+    return winner
 
 # функция раунда, начинающегося с хода компьютера
 def computer_turn():
-    global player
-    global computer
-    global deck
-    global trump
-    global turn_set
-    global winner
-    global c
+    global turn_set, c, winner
     print(Back.MAGENTA, Fore.BLACK, Style.BRIGHT +'Ход соперника:', Style.RESET_ALL)
     cmp_no_trump = [card for card in computer if card[-1] != trump]
     cmp_trump = [card for card in computer if card[-1] == trump]
@@ -266,7 +249,7 @@ def computer_turn():
         winner = 'player'
     if len(computer) < 6 and len(deck) > 0: dobor_kart(computer)
     if len(player) < 6 and len(deck) > 0: dobor_kart(player)
-    return player, computer, deck, winner
+    return winner
 
 
 #глобальные переменные
@@ -286,17 +269,16 @@ print('Карты сданы!')
 print(Style.BRIGHT, Fore.BLACK, Back.RED + 'Козырь:', trump, Style.RESET_ALL)
 print()
 
-#первый ход - ход игрока
+#игра
 player_turn()
 print()
-
-#игра
 while len(player) and len(computer) > 0:
     if winner == 'player':
         player_turn()
     elif winner == 'computer':
         computer_turn()
     print()
+
 # объявление  победителя
 else:
     print('Игра окончена')
