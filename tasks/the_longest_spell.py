@@ -13,7 +13,7 @@ l = [value for value in d.values()]
 a = max(l)
 l = [key for key in d.keys() if d[key] == a]
 l.sort(key = lambda x: len(x), reverse = True)
-print(l[0], d[l[0])
+print(l[0], d[l[0]])
 
 
 
