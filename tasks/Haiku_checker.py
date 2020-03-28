@@ -25,10 +25,10 @@ def haiku(a):
         for line in a:
             if cnt in (1, 3):
                 if not re.match(r'(?:[^уеаоэяиюы]*[уеаоэяиюы][^уеаоэяиюы]*){5}$', line, flags=re.IGNORECASE):
-                    return 'Не хайку. В строке {} слогов не 5, а {}'.format(cnt, sum(line.count(i) for i in list('уеаоэяиюы')))
+                    return 'Не хайку. В строке {} слогов не 5, а {}'.format(cnt, sum(line.count(i) for i in 'уеаоэяиюы'))
             elif cnt == 2:
                 if not re.match(r'(?:[^уеаоэяиюы]*[уеаоэяиюы][^уеаоэяиюы]*){7}$', line, flags=re.IGNORECASE):
-                    return 'Не хайку. В строке {} слогов не 7, а {}'.format(cnt, sum(line.count(i) for i in list('уеаоэяиюы')))
+                    return 'Не хайку. В строке {} слогов не 7, а {}'.format(cnt, sum(line.count(i) for i in 'уеаоэяиюы'))
             cnt += 1
     return 'Это хайку!'
 
