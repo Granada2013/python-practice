@@ -39,3 +39,7 @@ def spiral(n):
     if n % 2 == 0: matrix[i_temp][j_temp] = '.'
     return matrix
 
+
+n = int(input('Введите число: '))
+for line in spiral(n):
+    print(*line)
