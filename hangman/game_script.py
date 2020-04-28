@@ -1,5 +1,6 @@
 from hangman.game_cls import Game, GameStatus
 
+
 game = Game(errors=5)
 print("Welcome to hangman! The word was generated.\nUse cyrillic letters only.")
 
@@ -10,9 +11,9 @@ while game.status() == GameStatus.IN_PROGRESS:
     while True:
         letter = input('What letter you want to try? ').lower()
         try:
-            list('абвгдеёжзийклмнопрстуфхцчшщъыьэюя').index(letter)
-        except ValueError:
-            print("It's not a cyrillic letter.")
+            assert letter in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+        except AssertionError:
+            print("It's not a cyrillic letter")
         else:
             if game.isduplicate(letter):
                 print("You've tried it. Try another one")
