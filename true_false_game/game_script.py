@@ -8,8 +8,8 @@ while g.game_status() != GameStatus.GAME_OVER:
     while True:
         ans = input("Type y for 'yes' or n for 'no': ")
         try:
-            ['y', 'n'].index(ans)
-        except ValueError:
+            assert ans in ('y', 'n')
+        except AssertionError:
             print('no such option. Try again')
         else:
             print("{}\n".format(f'Wrong! {q.comment}' if not g.isrightanswer(ans) else 'Right!'))

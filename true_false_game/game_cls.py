@@ -55,7 +55,8 @@ class Game:
 
     def game_result(self):
         if self.__errors_commited == self.__errors_allowed:
-            return f'You lost! Errors commited: {self.__errors_commited}/{self.__errors_allowed}'
+            return f'You lost! \nQuestions passed: {self.__current_question}\n' \
+                   f'Errors commited: {self.__errors_commited}/{self.__errors_allowed}'
         elif self.__last_question_passed():
             return f'You won!\nQuestions passed: {self.__current_question}\n' \
                    f'Errors commited: {self.__errors_commited}/{self.__errors_allowed}'
