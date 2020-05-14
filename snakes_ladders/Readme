@@ -1,0 +1,27 @@
+Your task is to make a simple class called SnakesLadders.
+The test cases will call the method play(die1, die2) independantly of the state of the game or the player turn.
+The variables die1 and die2 are the die thrown in a turn and are both integers between 1 and 6.
+The player will move the sum of die1 and die2.
+
+RULES:
+1.  There are two players and both start off the board on square 0.
+
+2.  Player 1 starts and alternates with player 2.
+
+3.  You follow the numbers up the board in order 1=>100
+
+4.  If the value of both die are the same then that player will have another go.
+
+5.  Climb up ladders. The ladders on the game board allow you to move upwards and get ahead faster.
+If you land exactly on a square that shows an image of the bottom of a ladder,
+then you may move the player all the way up to the square at the top of the ladder.
+
+6.  Slide down snakes. Snakes move you back on the board because you have to slide down them.
+If you land exactly at the top of a snake, slide move the player all the way to the square
+at the bottom of the snake or chute.
+
+7.  Land exactly on the last square to win. The first person to reach the highest square on the board wins.
+But there's a twist! If you roll too high, your player "bounces" off the last square and moves back.
+
+THE BOARD:
+https://stock.adobe.com/ru/search?k=Snakes+and+Ladders&asset_id=283348976
