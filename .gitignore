@@ -3,6 +3,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+/warrior
+tasks/1.py
+text
 
 # C extensions
 *.so
